@@ -6,32 +6,26 @@ import itertools
 class ExerciseRoutine(object):
     """Interface to define an exercise routine.
 
-    Routines are descriptions / notes combined with a set of exercises. Typically,
+    Routines are instructionss / notes combined with a set of exercises. Typically,
     they will represent one group, or part, of a full workout.
     """
 
-    def __init__(self, name, description, exercises, n_exercises=1):
+    def __init__(self, name, instructions, exercises):
         """Constructor for the ExerciseRoutine object.
 
         Args:
             name: `string` The name of hte routine.
-            description: `string` A description for the routine.
+            instructions: `string` Instructions for the routine.
             exercises: `list` A list of `Exercise` objects that make up the routine.
-            n_exercises: `int` The number of exercises that make up the reoutine. Defaults to 1.
         """
-        if len(exercises) < n_exercises:
-            raise ValueError(f"n_exercises must be <= exercises. Got n_exercises = {n_exercises} "
-                             f"for {len(exercises)} exercises.")
-
         self.name = name
-        self.description = description
+        self.instructions = instructions
         self.exercises = exercises
-        self.n_exercises = n_exercises
 
         self.exercises_for_routine = [] 
-
+    
     def get_exercises(self):
-        """Randomly chooses and returns self.n_exercises for the routine.
+        """Randomly chooses and returns exercises for the routine.
 
         Exercises will not repeat.
 
@@ -39,10 +33,7 @@ class ExerciseRoutine(object):
             A `list` of `Exercise` objects.
         """
         if not self.exercises_for_routine:
-            exercises = self.exercises[:]
-            for _ in range(self.n_exercises):
-                ind = random.randint(0, len(exercises) - 1)
-                self.exercises_for_routine.append(exercises.pop(ind))
+            self.exercises_for_routine.append(random.choice(self.exercises))
 
         return self.exercises_for_routine
     
@@ -55,12 +46,11 @@ class ExerciseRoutine(object):
         exercises_formatted = ''.join(
             [f"<li>{exercise}</li>" for exercise in self.get_exercises()])
         return f"""
-            <li><b>{self.name}</b> {self.description.rstrip(".")}:
+            <li><b>{self.name}</b> {self.instructions.rstrip(".")}:
                 <ul>
                     {exercises_formatted}
                 </ul>
-            </li>
-            """
+            </li>"""
 
     def __str__(self):
         return self.as_html()
@@ -72,23 +62,18 @@ class SupersetRoutine(ExerciseRoutine):
     This is a slight derivation from a normal exercise routine.
     """
 
-    def __init__(self, name, description, exercise_groups, n_exercises=1):
-        for exercises in exercise_groups:
-            if len(exercises) < n_exercises:
-                raise ValueError(f"n_exercises must be <= exercises. Got n_exercises = {n_exercises} "
-                                 f"for {len(exercises)} exercises.")
-
-        exercises = itertools.chain.from_iterable(exercise_groups)
-        super().__init__(name, description, exercises, n_exercises)
+    def __init__(self, name, instructions, exercise_groups):
+        # Reformat exercise_groups to be a single list so we can use the
+        # parent constructor.
+        _unused_exercises = itertools.chain.from_iterable(exercise_groups)
+        super().__init__(name, instructions, _unused_exercises)
         self.exercise_groups = exercise_groups
 
     def get_exercises(self):
+        """Overwrites the get_exercises method to work with an exercise list of lists."""
         if not self.exercises_for_routine:
             for exercise_group in self.exercise_groups:
-                exercises = exercise_group[:]
-                for _ in range(self.n_exercises):
-                    ind = random.randint(0, len(exercises) - 1)
-                    self.exercises_for_routine.append(exercises.pop(ind))
+                self.exercises_for_routine.append(random.choice(exercise_group))
 
         return self.exercises_for_routine
 
@@ -96,7 +81,7 @@ class SupersetRoutine(ExerciseRoutine):
 # Monday routines
 MaxEffortExercise = ExerciseRoutine(
     name="Max-Effort Exercise",
-    description="Work up to a max set of 3-5 reps.",
+    instructions="Work up to a max set of 3-5 reps.",
     exercises=[
         exercise.BenchPress,
         exercise.BarbellFloorPress,
@@ -106,8 +91,8 @@ MaxEffortExercise = ExerciseRoutine(
 
 SupplementalExercise = ExerciseRoutine(
     name="Supplemental Exercise",
-    description=("Perform 2 sets of max reps. Choose a weight you can perform 15-20 reps on the 1st set. "
-                 "Use the same weight for both sets and rest 3-4 minutes in between."),
+    instructions=("Perform 2 sets of max reps. Choose a weight you can perform 15-20 reps on the 1st set. "
+                  "Use the same weight for both sets and rest 3-4 minutes in between."),
     exercises=[
         exercise.FlatDBBenchPress,
         exercise.InclineDBBenchPress,
@@ -116,8 +101,8 @@ SupplementalExercise = ExerciseRoutine(
 
 RearDeltSuperset = SupersetRoutine(
     name="Horizontal pulling / Rear delt superset",
-    description="Superset! Perform 3-4 supersets of 8-12 reps of each exercise.",
-    exercises=[
+    instructions="Superset! Perform 3-4 supersets of 8-12 reps of each exercise.",
+    exercise_groups=[
         [
             exercise.DBRows,
             exercise.BarbellRows,
@@ -135,7 +120,7 @@ RearDeltSuperset = SupersetRoutine(
 
 Traps = ExerciseRoutine(
     name="Traps",
-    description="Perform 3-4 sets of 8-15 reps.",
+    instructions="Perform 3-4 sets of 8-15 reps.",
     exercises=[
         exercise.DBShrugs,
         exercise.BarbellShrugs,
@@ -144,7 +129,7 @@ Traps = ExerciseRoutine(
 
 ElbowFlexorExercise = ExerciseRoutine(
     name="Elbow flexor exercise",
-    description="Perform 3-4 sets of 8-15 reps.",
+    instructions="Perform 3-4 sets of 8-15 reps.",
     exercises=[
         exercise.BarbellCurls,
         exercise.StandingDBCurls,
@@ -157,7 +142,7 @@ ElbowFlexorExercise = ExerciseRoutine(
 # Tuesday routines
 JumpTraining = ExerciseRoutine(
     name="Jump training",
-    description="Perform 5-8 sets of 1-3 jumps",
+    instructions="Perform 5-8 sets of 1-3 jumps",
     exercises=[
         exercise.BoxJumps,
         exercise.VerticalJumps,
@@ -169,7 +154,7 @@ JumpTraining = ExerciseRoutine(
 
 UnilateralExercise = ExerciseRoutine(
     name="Unilateral exercise (w/ added ROM)",
-    description="Perform 2-3 sets of 8-10 reps.",
+    instructions="Perform 2-3 sets of 8-10 reps.",
     exercises=[
         exercise.BulgarianSplitSquats,
         exercise.BarbellReverseLunge,
@@ -179,7 +164,7 @@ UnilateralExercise = ExerciseRoutine(
 
 HipExtensionExercise = ExerciseRoutine(
     name="Hip extension exercise",
-    description="Perform 3 sets of 8-12 reps.",
+    instructions="Perform 3 sets of 8-12 reps.",
     exercises=[
         exercise.FortyFiveDegreeHyperextensions,
         exercise.ReverseHyperextensions,
@@ -191,7 +176,7 @@ HipExtensionExercise = ExerciseRoutine(
 
 WeightedAbdominals = ExerciseRoutine(
     name="Weighted Abdominals",
-    description="Perform 4 sets of 10-15 reps.",
+    instructions="Perform 4 sets of 10-15 reps.",
     exercises=[
         exercise.DBSideBends,
         exercise.OffsetBarbellSideBends,
@@ -206,7 +191,7 @@ WeightedAbdominals = ExerciseRoutine(
 # Thursday routines
 RepetitionExercise = ExerciseRoutine(
     name="Repetition Exercise",
-    description="Perform 3 sets of max reps OR 4 sets of 12-15 reps.",
+    instructions="Perform 3 sets of max reps OR 4 sets of 12-15 reps.",
     exercises=[
         exercise.FlatDBBenchPress,
         exercise.InclineDBBenchPress,
@@ -219,8 +204,8 @@ RepetitionExercise = ExerciseRoutine(
 
 VerticalPullingDeltSuperset = SupersetRoutine(
     name="Vertical pulling / Rear delt superset",
-    description="Superset! Perform 3-4 supersets of 8-12 reps of each exercise.",
-    exercises=[
+    instructions="Superset! Perform 3-4 supersets of 8-12 reps of each exercise.",
+    exercise_groups=[
         [
             exercise.LatPulldowns,
             exercise.StraightArmPulldowns,
@@ -235,7 +220,7 @@ VerticalPullingDeltSuperset = SupersetRoutine(
 
 MedialDelts = ExerciseRoutine(
     name="Medial delts",
-    description="Perform 4 sets of 8-12 reps.",
+    instructions="Perform 4 sets of 8-12 reps.",
     exercises=[
         exercise.DBLateralRaises,
         exercise.LLateralRaises,
@@ -246,8 +231,8 @@ MedialDelts = ExerciseRoutine(
 
 TrapsArmsSuperset = SupersetRoutine(
     name="Traps / Arms superset",
-    description="Superset! Perform 3 supersets of 8-10 reps of each exercise.",
-    exercises=[
+    instructions="Superset! Perform 3 supersets of 8-10 reps of each exercise.",
+    exercise_groups=[
         [
             exercise.DBShrugs,
             exercise.BarbellShrugs,
@@ -264,7 +249,7 @@ TrapsArmsSuperset = SupersetRoutine(
 # Friday exercises
 MaxEffortLift = ExerciseRoutine(
     name="Max-effort lift",
-    description="Work up to a max set of 3-5 reps.",
+    instructions="Work up to a max set of 3-5 reps.",
     exercises=[
         exercise.BoxSquats,
         exercise.FreeSquats,
@@ -274,7 +259,7 @@ MaxEffortLift = ExerciseRoutine(
 
 UnilateralMovement = ExerciseRoutine(
     name="Unilateral Movement",
-    description="Perform 3 sets of 6-12 reps.",
+    instructions="Perform 3 sets of 6-12 reps.",
     exercises=[
         exercise.BulgarianSplitSquats,
         exercise.ReverseLungeVariations,
@@ -283,7 +268,7 @@ UnilateralMovement = ExerciseRoutine(
 
 HamstringMovement = ExerciseRoutine(
     name="Hamstring / Posterior Chain Movement",
-    description="Perform 3 sets of 8-12 reps.",
+    instructions="Perform 3 sets of 8-12 reps.",
     exercises=[
         exercise.FortyFiveDegreeHyperextensions,
         exercise.ReverseHyperextensions,
@@ -295,6 +280,6 @@ HamstringMovement = ExerciseRoutine(
 
 GroundBasedAbCricuit = ExerciseRoutine(
     name="Ground-based, high-rep abdominal circuit",
-    description=("Perform 10-20 reps of each exercise and go through the circuit 2-3 times. "
-                 "Rest 1-2 mins between circuits."),
+    instructions=("Perform 10-20 reps of each exercise and go through the circuit 2-3 times. "
+                  "Rest 1-2 mins between circuits."),
     exercises=[exercise.AbdominalCircuit])
