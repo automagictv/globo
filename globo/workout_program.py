@@ -1,6 +1,6 @@
 import workout
 
-MON, TUE, WED, THU, FRI, SAT, SUN= range(7)
+MON, TUE, WED, THU, FRI, SAT, SUN = range(7)
 
 
 WS4SB = {
