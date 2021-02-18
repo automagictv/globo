@@ -20,8 +20,7 @@ class Workout(object):
             <p>Don't forget to <a href="https://www.youtube.com/watch?v=qQ96oXp5RTU">warm up</a>!</p>
             <ul>
                 {routines_formatted}
-            </ul>
-        """
+            </ul>"""
 
         return html
 
