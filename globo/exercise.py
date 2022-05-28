@@ -292,3 +292,7 @@ ReverseLungeVariations = Exercise(
 StepUpVariations = Exercise(
     "Step up variations",
     "https://www.youtube.com/watch?v=dQqApCGd5Ss")
+
+BarbellOverheadPress = Exercise(
+    "Barbell Overhead Press",
+    "https://www.youtube.com/watch?v=_RlRDWO2jfg")
