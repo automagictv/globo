@@ -283,3 +283,40 @@ GroundBasedAbCricuit = ExerciseRoutine(
     instructions=("Perform 10-20 reps of each exercise and go through the circuit 2-3 times. "
                   "Rest 1-2 mins between circuits."),
     exercises=[exercise.AbdominalCircuit])
+
+# r/Fitness beginner routines
+BarbellRows = ExerciseRoutine(
+    name="Barbell Rows",
+    instructions=("Perform 3 sets of 5 reps, going 1-2 reps before failure on the last set. "
+                  "Finish all 3 sets before moving on."),
+    exercises=[exercise.BarbellRows])
+
+BenchPress = ExerciseRoutine(
+    name="Bench Press",
+    instructions=("Perform 3 sets of 5 reps, going 1-2 reps before failure on the last set. "
+                  "Finish all 3 sets before moving on."),
+    exercises=[exercise.BarbellBenchPress])
+
+Squats = ExerciseRoutine(
+    name="Free Squats",
+    instructions=("Perform 3 sets of 5 reps, going 1-2 reps before failure on the last set. "
+                  "Finish all 3 sets before moving on."),
+    exercises=[exercise.FreeSquats])
+
+Pullups = ExerciseRoutine(
+    name="Pullups / Chinups",
+    instructions=("Perform 3 sets of 5 reps, going 1-2 reps before failure on the last set. "
+                  "Finish all 3 sets before moving on."),
+    exercises=[exercise.WeightedChinUps])
+
+OverheadPress = ExerciseRoutine(
+    name="Overhead Barbell Press",
+    instructions=("Perform 3 sets of 5 reps, going 1-2 reps before failure on the last set. "
+                  "Finish all 3 sets before moving on."),
+    exercises=[exercise.BarbellOverheadPress])
+
+Deadlifts = ExerciseRoutine(
+    name="Deadlifts",
+    instructions=("Perform 3 sets of 5 reps, going 1-2 reps before failure on the last set. "
+                  "Finish all 3 sets before moving on."),
+    exercises=[exercise.StraightBarDeadlifts])
