@@ -17,7 +17,7 @@ WS4SB = {
 WORKOUT_SWITCH = datetime.datetime.today().isocalendar()[1]
 
 BasicStrengthTraining = {
-    TUE: if WORKOUT_SWITCH workout.WorkoutA else workout.WorkoutB,
-    FRI: if WORKOUT_SWITCH workout.WorkoutB else workout.WorkoutA,
-    SUN: if WORKOUT_SWITCH workout.WorkoutA else workout.WorkoutB,
+    TUE: workout.WorkoutA if WORKOUT_SWITCH else workout.WorkoutB,
+    FRI: workout.WorkoutB if WORKOUT_SWITCH else workout.WorkoutA,
+    SUN: workout.WorkoutA if WORKOUT_SWITCH else workout.WorkoutB,
 }
