@@ -65,3 +65,20 @@ MaxEffortLowerBody = Workout(
         routine.HamstringMovement,
         routine.GroundBasedAbCricuit,
     ])
+
+# r/Fitness beginner workouts
+WorkoutA = Workout(
+    name="Workout A",
+    routines=[
+        routine.BarbellRows,
+        routine.BenchPress,
+        routine.Squats,
+    ])
+
+WorkoutB = Workout(
+    name="Workout B",
+    routines=[
+        routine.Pullups,
+        routine.OverheadPress,
+        routone.Deadlifts,
+    ])
