@@ -82,3 +82,19 @@ WorkoutB = Workout(
         routine.OverheadPress,
         routone.Deadlifts,
     ])
+
+WorkoutAWithConditioning = Workout(
+    name="Workout A + Conditioning",
+    routines=[
+        routine.BarbellRows,
+        routine.BenchPress,
+        routine.Squats,
+    ])
+
+WorkoutBWithConditioning = Workout(
+    name="Workout B + Conditioning",
+    routines=[
+        routine.Pullups,
+        routine.OverheadPress,
+        routone.Deadlifts,
+    ])
