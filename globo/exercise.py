@@ -296,3 +296,19 @@ StepUpVariations = Exercise(
 BarbellOverheadPress = Exercise(
     "Barbell Overhead Press",
     "https://www.youtube.com/watch?v=_RlRDWO2jfg")
+
+Burpees = Exercise(
+    "Burpees",
+    "https://www.youtube.com/watch?v=qLBImHhCXSw")
+
+Pullups = Exercise(
+    "Pullups",
+    "https://www.youtube.com/watch?v=eGo4IYlbE5g")
+
+BodyweightSquats = Exercise(
+    "Squats (bodyweight)",
+    "https://youtu.be/R1v152b72lo?t=64")
+
+AGTStretchRoutine = Exercise(
+    "AGT Stretch Routine (follow link)",
+    "https://agt.degreesofclarity.com/stretching/")

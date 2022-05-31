@@ -80,7 +80,7 @@ WorkoutB = Workout(
     routines=[
         routine.Pullups,
         routine.OverheadPress,
-        routone.Deadlifts,
+        routine.Deadlifts,
     ])
 
 WorkoutAWithConditioning = Workout(
@@ -89,6 +89,7 @@ WorkoutAWithConditioning = Workout(
         routine.BarbellRows,
         routine.BenchPress,
         routine.Squats,
+        routine.NoExcusesConditioningA,
     ])
 
 WorkoutBWithConditioning = Workout(
@@ -96,5 +97,13 @@ WorkoutBWithConditioning = Workout(
     routines=[
         routine.Pullups,
         routine.OverheadPress,
-        routone.Deadlifts,
+        routine.Deadlifts,
+        routine.NoExcusesConditioningA,
+    ])
+
+StretchWorkout = Workout(
+    name="Active Recovery",
+    routines=[
+        routine.NoExcusesConditioningA,
+        routine.AGTStretchRoutine,
     ])
