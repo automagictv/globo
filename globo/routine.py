@@ -10,13 +10,14 @@ class ExerciseRoutine(object):
     they will represent one group, or part, of a full workout.
     """
 
-    def __init__(self, name, instructions, exercises):
+    def __init__(self, name, instructions, exercises, include_all=False):
         """Constructor for the ExerciseRoutine object.
 
         Args:
             name: `string` The name of hte routine.
             instructions: `string` Instructions for the routine.
             exercises: `list` A list of `Exercise` objects that make up the routine.
+            include_all: `boolean` Flag to include all exercises.
         """
         self.name = name
         self.instructions = instructions
@@ -33,7 +34,10 @@ class ExerciseRoutine(object):
             A `list` of `Exercise` objects.
         """
         if not self.exercises_for_routine:
-            self.exercises_for_routine.append(random.choice(self.exercises))
+            if self.include_all:
+                self.exercises_for_routine = self.exercises[::]
+            else:
+                self.exercises_for_routine.append(random.choice(self.exercises))
 
         return self.exercises_for_routine
     
@@ -324,16 +328,19 @@ Deadlifts = ExerciseRoutine(
 NoExcusesConditioningA = ExerciseRoutine(
     name="No Excuses! (Conditioning)",
     instructions=("Perform each exercise one after another with no breaks for "
-                  "4 sets. Time for set: 60, 45, 30, 15"),
+                  "4 sets. Exercise time for each set: 60, 45, 30, 15 for 10 "
+                  "minutes total (60x4 + 45x4 + 30x4 + 15x4)."),
     exercises=[
         exercise.Burpees,
         exercise.Pullups,
         exercise.BodyweightSquats,
         exercise.PushUpVariations,
-    ]
+    ],
+    include_all=True
 )
 
 AGTStretchRoutine = ExerciseRoutine(
-    name="Static Stretching! Follow the link for instructions.",
+    name="Static Stretching!",
+    instructions="Follow the link for instructions.",
     exercises=[exercise.AGTStretchRoutine]
 )
