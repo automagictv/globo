@@ -320,3 +320,20 @@ Deadlifts = ExerciseRoutine(
     instructions=("Perform 3 sets of 5 reps, going 1-2 reps before failure on the last set. "
                   "Finish all 3 sets before moving on."),
     exercises=[exercise.StraightBarDeadlifts])
+
+NoExcusesConditioningA = ExerciseRoutine(
+    name="No Excuses! (Conditioning)",
+    instructions=("Perform each exercise one after another with no breaks for "
+                  "4 sets. Time for set: 60, 45, 30, 15"),
+    exercises=[
+        exercise.Burpees,
+        exercise.Pullups,
+        exercise.BodyweightSquats,
+        exercise.PushUpVariations,
+    ]
+)
+
+AGTStretchRoutine = ExerciseRoutine(
+    name="Static Stretching! Follow the link for instructions.",
+    exercises=[exercise.AGTStretchRoutine]
+)
