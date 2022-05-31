@@ -22,6 +22,7 @@ class ExerciseRoutine(object):
         self.name = name
         self.instructions = instructions
         self.exercises = exercises
+        self.include_all = include_all
 
         self.exercises_for_routine = [] 
     
