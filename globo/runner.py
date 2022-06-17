@@ -20,7 +20,7 @@ if __name__ == "__main__":
     # See if today is a workout day
     if today in CURRENT_WORKOUT.keys():
         workout = CURRENT_WORKOUT.get(today)
-        subject = f"WORKOUT: {workout.name}"
+        subject = f"{datetime.datetime.today().date()} WORKOUT: {workout.name}"
         # Handle newlines in html (yagmail v0.14.245 see https://github.com/kootenpv/yagmail/issues/116)
         contents = [workout.as_html().replace("\n","")]
 
