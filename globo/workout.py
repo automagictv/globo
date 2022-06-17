@@ -98,7 +98,7 @@ WorkoutBWithConditioning = Workout(
         routine.Pullups,
         routine.OverheadPress,
         routine.Deadlifts,
-        routine.NoExcusesConditioningA,
+        routine.NoExcusesConditioningB,
     ])
 
 StretchWorkout = Workout(
