@@ -101,9 +101,16 @@ WorkoutBWithConditioning = Workout(
         routine.NoExcusesConditioningB,
     ])
 
-StretchWorkout = Workout(
+StretchWorkoutA = Workout(
     name="Active Recovery",
     routines=[
         routine.NoExcusesConditioningA,
+        routine.AGTStretchRoutine,
+    ])
+
+StretchWorkoutB = Workout(
+    name="Active Recovery",
+    routines=[
+        routine.NoExcusesConditioningB,
         routine.AGTStretchRoutine,
     ])
