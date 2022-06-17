@@ -312,3 +312,15 @@ BodyweightSquats = Exercise(
 AGTStretchRoutine = Exercise(
     "AGT Stretch Routine (follow link)",
     "https://agt.degreesofclarity.com/stretching/")
+
+MountainClimbers = Exercise(
+    "Mountain Climbers",
+    "https://youtu.be/cnyTQDSE884?t=38")
+
+Bicycle = Exercise(
+    "Bicycle",
+    "https://www.youtube.com/watch?v=9FGilxCbdz8")
+
+JumpLunge = Exercise(
+    "Jump Lunge",
+    "https://www.youtube.com/watch?v=hTdcOG9muQk")
