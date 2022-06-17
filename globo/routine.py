@@ -340,6 +340,20 @@ NoExcusesConditioningA = ExerciseRoutine(
     include_all=True
 )
 
+NoExcusesConditioningB = ExerciseRoutine(
+    name="No Excuses! (Conditioning)",
+    instructions=("Perform each exercise one after another with no breaks for "
+                  "4 sets. Exercise time for each set: 60, 45, 30, 15 for 10 "
+                  "minutes total (60x4 + 45x4 + 30x4 + 15x4)."),
+    exercises=[
+        exercise.MountainClimbers,
+        exercise.JumpLunge,
+        exercise.Bicycle,
+        exercise.Burpees,
+    ],
+    include_all=True
+)
+
 AGTStretchRoutine = ExerciseRoutine(
     name="Static Stretching!",
     instructions="Follow the link for instructions.",
