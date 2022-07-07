@@ -324,3 +324,11 @@ Bicycle = Exercise(
 JumpLunge = Exercise(
     "Jump Lunge",
     "https://www.youtube.com/watch?v=hTdcOG9muQk")
+
+YogaA = Exercise(
+    "Yoga with Adriene",
+    "https://www.youtube.com/watch?v=Yzm3fA2HhkQ")
+
+YogaB = Exercise(
+    "Yoga with SaraBeth",
+    "https://www.youtube.com/watch?v=JlG1d00qdo8")

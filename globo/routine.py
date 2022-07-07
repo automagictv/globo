@@ -359,3 +359,15 @@ AGTStretchRoutine = ExerciseRoutine(
     instructions="Follow the link for instructions.",
     exercises=[exercise.AGTStretchRoutine]
 )
+
+YogaForFlexibilityA = ExerciseRoutine(
+    name="Yoga for Flexibility (A)",
+    instructions="Do this yoga!",
+    exercises=[exercise.YogaA]
+)
+
+YogaForFlexibilityB = ExerciseRoutine(
+    name="Yoga for Flexibility (B)",
+    instructions="Do this yoga!",
+    exercises=[exercise.YogaB]
+)
