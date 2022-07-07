@@ -106,3 +106,15 @@ StretchWorkout = Workout(
     routines=[
         routine.AGTStretchRoutine,
     ])
+
+YogaWorkoutA = Workout(
+    name="Yoga - Active Recovery",
+    routines=[
+        routine.YogaForFlexibilityA,
+    ])
+
+YogaWorkoutB = Workout(
+    name="Yoga - Active Recovery",
+    routines=[
+        routine.YogaForFlexibilityB,
+    ])
