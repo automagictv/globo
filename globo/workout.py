@@ -83,6 +83,18 @@ WorkoutB = Workout(
         routine.Deadlifts,
     ])
 
+ConditioningA = Workout(
+    name="Conditioning A",
+    routines=[
+        routine.NoExcusesConditioningA,
+    ])
+
+ConditioningB = Workout(
+    name="Conditioning B",
+    routines=[
+        routine.NoExcusesConditioningB,
+    ])
+
 WorkoutAWithConditioning = Workout(
     name="Workout A + Conditioning",
     routines=[
