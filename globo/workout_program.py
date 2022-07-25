@@ -26,8 +26,9 @@ def _activeRecoverySelector():
         return workout.StretchWorkout
 
 BasicStrengthTraining = {
-    MON: workout.WorkoutAWithConditioning if WORKOUT_SWITCH else workout.WorkoutBWithConditioning,
-    WED: workout.WorkoutBWithConditioning if WORKOUT_SWITCH else workout.WorkoutAWithConditioning,
+    MON: workout.WorkoutA if WORKOUT_SWITCH else workout.WorkoutB,
+    TUE: workout.ConditioningA if WORKOUT_SWITCH else workout.ConditioningB,
+    WED: workout.WorkoutB if WORKOUT_SWITCH else workout.WorkoutA,
     THU: workout.WorkoutA if WORKOUT_SWITCH else workout.WorkoutB,
     FRI: _activeRecoverySelector(),
 }
