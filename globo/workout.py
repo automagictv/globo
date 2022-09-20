@@ -131,7 +131,7 @@ YogaWorkoutB = Workout(
         routine.YogaForFlexibilityB,
     ])
 
-TrekAerobicA = Workout(name="Aerobics", routines=[routine.AerobicTrainingA])
-TrekAerobicB = Workout(name="Aerobics", routines=[routine.AerobicTrainingB])
+TrekAerobicA = Workout(name="Aerobics and Trek Back A (in Hevy)", routines=[routine.AerobicTrainingA])
+TrekAerobicB = Workout(name="Aerobics and Core A (in Hevy)", routines=[routine.AerobicTrainingB])
 Climb = Workout(name="Climb", routines=[routine.Climb])
-TrekStrength = Workout(name="Strength Training", routines=[routine.TrekStrength])
+TrekStrength = Workout(name="Strength Training: Trek Lower A (in Hevy)", routines=[routine.TrekStrength])
