@@ -374,16 +374,32 @@ YogaForFlexibilityB = ExerciseRoutine(
 
 AerobicTrainingA = ExerciseRoutine(
     name="Aerobic Training",
-    instructions="20-60 minutes of training. Keep HR between 135-145 for Aerobic base training.",
-    exercises=[exercise.AerobicA, exercise.BackA]
+    instructions="20-60 minutes of training. Keep HR between 135-145 for Aerobic base training. Then do Trek Back A in Hevy.",
+    exercises=[
+        exercise.AerobicA,
+        exercise.BackA
+    ],
+    include_all=True
 )
 
 AerobicTrainingB = ExerciseRoutine(
     name="Aerobic Training",
-    instructions="20-60 minutes of training. Keep HR between 135-145 for Aerobic base training.",
-    exercises=[exercise.AerobicA, exercise.CoreA]
+    instructions="20-60 minutes of training. Keep HR between 135-145 for Aerobic base training. Then do Core A in Hevy.",
+    exercises=[
+        exercise.AerobicA,
+        exercise.CoreA
+    ],
+    include_all=True
 )
 
-Climb = ExerciseRoutine(name="Climb", instructions="Hit the wall baby!", exercises=[exercise.Climb])
+Climb = ExerciseRoutine(
+    name="Climb",
+    instructions="Hit the wall baby!",
+    exercises=[exercise.Climb]
+)
 
-TrekStrength = ExerciseRoutine(name="Trek Strength", instructions="Hit it hard.", exercises=[exercise.LowerA])
+TrekStrength = ExerciseRoutine(
+    name="Trek Lower A in Hevy",
+    instructions="Hit it hard.",
+    exercises=[exercise.LowerA]
+)
