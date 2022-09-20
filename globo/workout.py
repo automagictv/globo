@@ -130,3 +130,8 @@ YogaWorkoutB = Workout(
     routines=[
         routine.YogaForFlexibilityB,
     ])
+
+TrekAerobicA = Workout(name="Aerobics", routines=[routine.AerobicTrainingA])
+TrekAerobicB = Workout(name="Aerobics", routines=[routine.AerobicTrainingB])
+Climb = Workout(name="Climb", routines=[routine.Climb])
+TrekStrength = Workout(name="Strength Training", routines=[routine.TrekStrength])

@@ -332,3 +332,15 @@ YogaA = Exercise(
 YogaB = Exercise(
     "Yoga with SaraBeth",
     "https://www.youtube.com/watch?v=JlG1d00qdo8")
+
+AerobicA = Exercise(
+    "Wighted Vest Treadmill (5-15 degree incline, 24+ lbs vest)",
+    "https://nolink")
+
+Climb = Exercise(
+    "Climb (bouldering at VITAL)",
+    "nolink")
+
+LowerA = Exercise("Lower A in Hevy", "nolink")
+BackA = Exercise("Back A in Hevy", "nolink")
+CoreA = Exercise("Core A in Hevy", "nolink")
