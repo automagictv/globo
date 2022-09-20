@@ -371,3 +371,19 @@ YogaForFlexibilityB = ExerciseRoutine(
     instructions="Do this yoga!",
     exercises=[exercise.YogaB]
 )
+
+AerobicTrainingA = ExerciseRoutine(
+    name="Aerobic Training",
+    instructions="20-60 minutes of training. Keep HR between 135-145 for Aerobic base training.",
+    exercises=[exercise.AerobicA, exercise.BackA]
+)
+
+AerobicTrainingB = ExerciseRoutine(
+    name="Aerobic Training",
+    instructions="20-60 minutes of training. Keep HR between 135-145 for Aerobic base training.",
+    exercises=[exercise.AerobicA, exercise.CoreA]
+)
+
+Climb = ExerciseRoutine(name="Climb", instructions="Hit the wall baby!", exercises=[exercise.Climb])
+
+TrekStrength = ExerciseRoutine(name="Trek Strength", instructions="Hit it hard.", exercises=[exercise.LowerA])

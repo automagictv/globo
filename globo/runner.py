@@ -8,7 +8,7 @@ parser.add_argument("--username", type=str, help="The gmail address from which t
 parser.add_argument("--app_password", type=str, help="Your gmail app password to sign into the sender account.", required=True)
 parser.add_argument("--recipients", type=str, help="A comma separated list of one or more recipient email addresses.", required=True)
 
-CURRENT_WORKOUT = workout_program.BasicStrengthTraining
+CURRENT_WORKOUT = workout_program.TrekTraining
 
 if __name__ == "__main__":
     # Parse the command line arguments

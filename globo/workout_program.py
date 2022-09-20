@@ -32,3 +32,12 @@ BasicStrengthTraining = {
     THU: workout.WorkoutA if WORKOUT_SWITCH else workout.WorkoutB,
     FRI: _activeRecoverySelector(),
 }
+
+TrekTraining = {
+    MON: workout.TrekAerobicA if WORKOUT_SWITCH else workout.TrekAerobicB,
+    TUE: workout.Climb,
+    THU: workout.TrekStrength,
+    FRI: workout.TrekAerobicB if WORKOUT_SWITCH else workout.TrekAerobicA,
+    SAT: workout.Climb,
+    SUN: _activeRecoverySelector(),
+}
