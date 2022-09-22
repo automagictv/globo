@@ -36,8 +36,8 @@ BasicStrengthTraining = {
 TrekTraining = {
     MON: workout.TrekAerobicA if WORKOUT_SWITCH else workout.TrekAerobicB,
     TUE: workout.Climb,
-    THU: workout.TrekStrength,
-    FRI: workout.TrekAerobicB if WORKOUT_SWITCH else workout.TrekAerobicA,
-    SAT: workout.Climb,
-    SUN: _activeRecoverySelector(),
+    THU: workout.TrekAerobicB if WORKOUT_SWITCH else workout.TrekAerobicA,
+    FRI: workout.TrekStrength,
+    SAT: _activeRecoverySelector(),
+    SUN: workout.Climb,
 }
