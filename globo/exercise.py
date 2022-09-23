@@ -335,6 +335,6 @@ YogaB = Exercise(
 
 AerobicA = Exercise("Wighted Vest Treadmill (5-15 degree incline, 24+ lbs vest)", "nolink")
 Climb = Exercise("Climb (bouldering at VITAL)", "nolink")
-LowerA = Exercise("Lower A in Hevy", "nolink")
-BackA = Exercise("Back A in Hevy", "nolink")
-CoreA = Exercise("Core A in Hevy", "nolink")
+LowerA = Exercise("Lower A in Hevy", "https://hevy.com/routine/elcWsErdNLX")
+BackA = Exercise("Back A in Hevy", "https://hevy.com/routine/aBDMaIsTVRo")
+CoreA = Exercise("Core A in Hevy", "https://hevy.com/routine/DYJ96BcOfV4")
