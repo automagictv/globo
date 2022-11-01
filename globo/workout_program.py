@@ -41,3 +41,10 @@ TrekTraining = {
     SAT: _activeRecoverySelector(),
     SUN: workout.Climb,
 }
+
+# Handled via Todoist for the main schedule.
+# See https://thefitness.wiki/routines/5-3-1-for-beginners/
+FiveThreeOne = {
+    FRI: workout.Climb,
+    SUN: _activeRecoverySelector(),
+}
