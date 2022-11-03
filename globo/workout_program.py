@@ -45,6 +45,9 @@ TrekTraining = {
 # Handled via Todoist for the main schedule.
 # See https://thefitness.wiki/routines/5-3-1-for-beginners/
 FiveThreeOne = {
+    TUE: workout.FiveThreeOneWorkout,
+    THU: workout.FiveThreeOneWorkout,
     FRI: workout.Climb,
+    SAT: workout.FiveThreeOneWorkout,
     SUN: _activeRecoverySelector(),
 }
