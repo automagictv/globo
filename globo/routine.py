@@ -403,3 +403,9 @@ TrekStrength = ExerciseRoutine(
     instructions="Hit it hard.",
     exercises=[exercise.LowerA]
 )
+
+FiveThreeOneRoutine = ExerciseRoutine(
+    name="5/3/1",
+    instructions="Hit it hard.",
+    exercises=[exercise.FiveThreeOne]
+)

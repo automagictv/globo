@@ -338,3 +338,6 @@ Climb = Exercise("Climb (bouldering at VITAL)", "nolink")
 LowerA = Exercise("Lower A in Hevy", "https://hevy.com/routine/elcWsErdNLX")
 BackA = Exercise("Back A in Hevy", "https://hevy.com/routine/aBDMaIsTVRo")
 CoreA = Exercise("Core A in Hevy", "https://hevy.com/routine/DYJ96BcOfV4")
+FiveThreeOne = Exercise(
+    "5/3/1 in Hevy. Review example link for exact schedule.",
+    "https://docs.google.com/spreadsheets/d/1h7Un7VR1_lgIhGCpaFQComvMB7GLRiRp/edit#gid=127263416")
