@@ -409,3 +409,9 @@ FiveThreeOneRoutine = ExerciseRoutine(
     instructions="Hit it hard.",
     exercises=[exercise.FiveThreeOne]
 )
+
+DownDogYogaRoutine = ExerciseRoutine(
+    name="DownDog Yoga",
+    instructions="Get loose!",
+    exercise=[exercise.DownDogYoga]
+)

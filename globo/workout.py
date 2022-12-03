@@ -135,3 +135,4 @@ TrekAerobicB = Workout(name="Aerobics and Core A (in Hevy)", routines=[routine.A
 Climb = Workout(name="Climb", routines=[routine.Climb])
 TrekStrength = Workout(name="Strength Training: Trek Lower A (in Hevy)", routines=[routine.TrekStrength])
 FiveThreeOneWorkout = Workout(name="5/3/1 (in sheets and Hevy)", routines=[routine.FiveThreeOneRoutine])
+DownDogYoga = Workout(name="DownDog Yoga", routines=[routine.DownDogYogaRoutine])
