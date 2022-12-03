@@ -8,7 +8,7 @@ parser.add_argument("--username", type=str, help="The gmail address from which t
 parser.add_argument("--app_password", type=str, help="Your gmail app password to sign into the sender account.", required=True)
 parser.add_argument("--recipients", type=str, help="A comma separated list of one or more recipient email addresses.", required=True)
 
-CURRENT_WORKOUT = workout_program.WS4SB
+CURRENT_WORKOUT = workout_program.FiveThreeOne
 
 if __name__ == "__main__":
     # Parse the command line arguments
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     # See if today is a workout day
     if today in CURRENT_WORKOUT.keys():
         workout = CURRENT_WORKOUT.get(today)
-        subject = f"WORKOUT: {workout.name}"
+        subject = f"{datetime.datetime.today().date()} WORKOUT: {workout.name}"
         # Handle newlines in html (yagmail v0.14.245 see https://github.com/kootenpv/yagmail/issues/116)
         contents = [workout.as_html().replace("\n","")]
 

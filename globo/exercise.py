@@ -292,3 +292,53 @@ ReverseLungeVariations = Exercise(
 StepUpVariations = Exercise(
     "Step up variations",
     "https://www.youtube.com/watch?v=dQqApCGd5Ss")
+
+BarbellOverheadPress = Exercise(
+    "Barbell Overhead Press",
+    "https://www.youtube.com/watch?v=_RlRDWO2jfg")
+
+Burpees = Exercise(
+    "Burpees",
+    "https://www.youtube.com/watch?v=qLBImHhCXSw")
+
+Pullups = Exercise(
+    "Pullups",
+    "https://www.youtube.com/watch?v=eGo4IYlbE5g")
+
+BodyweightSquats = Exercise(
+    "Squats (bodyweight)",
+    "https://youtu.be/R1v152b72lo?t=64")
+
+AGTStretchRoutine = Exercise(
+    "AGT Stretch Routine (follow link)",
+    "https://agt.degreesofclarity.com/stretching/")
+
+MountainClimbers = Exercise(
+    "Mountain Climbers",
+    "https://youtu.be/cnyTQDSE884?t=38")
+
+Bicycle = Exercise(
+    "Bicycle",
+    "https://www.youtube.com/watch?v=9FGilxCbdz8")
+
+JumpLunge = Exercise(
+    "Jump Lunge",
+    "https://www.youtube.com/watch?v=hTdcOG9muQk")
+
+YogaA = Exercise(
+    "Yoga with Adriene",
+    "https://www.youtube.com/watch?v=Yzm3fA2HhkQ")
+
+YogaB = Exercise(
+    "Yoga with SaraBeth",
+    "https://www.youtube.com/watch?v=JlG1d00qdo8")
+
+AerobicA = Exercise("Wighted Vest Treadmill (5-15 degree incline, 24+ lbs vest)", "nolink")
+Climb = Exercise("Climb (bouldering at VITAL)", "nolink")
+LowerA = Exercise("Lower A in Hevy", "https://hevy.com/routine/elcWsErdNLX")
+BackA = Exercise("Back A in Hevy", "https://hevy.com/routine/aBDMaIsTVRo")
+CoreA = Exercise("Core A in Hevy", "https://hevy.com/routine/DYJ96BcOfV4")
+FiveThreeOne = Exercise(
+    "5/3/1 in Hevy. Review example link for exact schedule.",
+    "https://docs.google.com/spreadsheets/d/1h7Un7VR1_lgIhGCpaFQComvMB7GLRiRp/edit#gid=127263416")
+DownDogYoga = Exercise("DownDog Yoga in app", "nolink")

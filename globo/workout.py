@@ -17,7 +17,6 @@ class Workout(object):
         routines_formatted = ''.join([routine.as_html() for routine in self.routines])
         html = f"""
             <p><b>{self.name}</b></p>
-            <p>Don't forget to <a href="https://www.youtube.com/watch?v=qQ96oXp5RTU">warm up</a>!</p>
             <ul>
                 {routines_formatted}
             </ul>"""
@@ -65,3 +64,75 @@ MaxEffortLowerBody = Workout(
         routine.HamstringMovement,
         routine.GroundBasedAbCricuit,
     ])
+
+# r/Fitness beginner workouts
+WorkoutA = Workout(
+    name="Workout A",
+    routines=[
+        routine.BarbellRows,
+        routine.BenchPress,
+        routine.Squats,
+    ])
+
+WorkoutB = Workout(
+    name="Workout B",
+    routines=[
+        routine.Pullups,
+        routine.OverheadPress,
+        routine.Deadlifts,
+    ])
+
+ConditioningA = Workout(
+    name="Conditioning A",
+    routines=[
+        routine.NoExcusesConditioningA,
+    ])
+
+ConditioningB = Workout(
+    name="Conditioning B",
+    routines=[
+        routine.NoExcusesConditioningB,
+    ])
+
+WorkoutAWithConditioning = Workout(
+    name="Workout A + Conditioning",
+    routines=[
+        routine.BarbellRows,
+        routine.BenchPress,
+        routine.Squats,
+        routine.NoExcusesConditioningA,
+    ])
+
+WorkoutBWithConditioning = Workout(
+    name="Workout B + Conditioning",
+    routines=[
+        routine.Pullups,
+        routine.OverheadPress,
+        routine.Deadlifts,
+        routine.NoExcusesConditioningB,
+    ])
+
+StretchWorkout = Workout(
+    name="Active Recovery",
+    routines=[
+        routine.AGTStretchRoutine,
+    ])
+
+YogaWorkoutA = Workout(
+    name="Yoga - Active Recovery",
+    routines=[
+        routine.YogaForFlexibilityA,
+    ])
+
+YogaWorkoutB = Workout(
+    name="Yoga - Active Recovery",
+    routines=[
+        routine.YogaForFlexibilityB,
+    ])
+
+TrekAerobicA = Workout(name="Aerobics and Trek Back A (in Hevy)", routines=[routine.AerobicTrainingA])
+TrekAerobicB = Workout(name="Aerobics and Core A (in Hevy)", routines=[routine.AerobicTrainingB])
+Climb = Workout(name="Climb", routines=[routine.Climb])
+TrekStrength = Workout(name="Strength Training: Trek Lower A (in Hevy)", routines=[routine.TrekStrength])
+FiveThreeOneWorkout = Workout(name="5/3/1 (in sheets and Hevy)", routines=[routine.FiveThreeOneRoutine])
+DownDogYoga = Workout(name="DownDog Yoga", routines=[routine.DownDogYogaRoutine])

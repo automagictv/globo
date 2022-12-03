@@ -10,17 +10,19 @@ class ExerciseRoutine(object):
     they will represent one group, or part, of a full workout.
     """
 
-    def __init__(self, name, instructions, exercises):
+    def __init__(self, name, instructions, exercises, include_all=False):
         """Constructor for the ExerciseRoutine object.
 
         Args:
             name: `string` The name of hte routine.
             instructions: `string` Instructions for the routine.
             exercises: `list` A list of `Exercise` objects that make up the routine.
+            include_all: `boolean` Flag to include all exercises.
         """
         self.name = name
         self.instructions = instructions
         self.exercises = exercises
+        self.include_all = include_all
 
         self.exercises_for_routine = [] 
     
@@ -33,7 +35,10 @@ class ExerciseRoutine(object):
             A `list` of `Exercise` objects.
         """
         if not self.exercises_for_routine:
-            self.exercises_for_routine.append(random.choice(self.exercises))
+            if self.include_all:
+                self.exercises_for_routine = self.exercises[::]
+            else:
+                self.exercises_for_routine.append(random.choice(self.exercises))
 
         return self.exercises_for_routine
     
@@ -283,3 +288,130 @@ GroundBasedAbCricuit = ExerciseRoutine(
     instructions=("Perform 10-20 reps of each exercise and go through the circuit 2-3 times. "
                   "Rest 1-2 mins between circuits."),
     exercises=[exercise.AbdominalCircuit])
+
+# r/Fitness beginner routines
+BarbellRows = ExerciseRoutine(
+    name="Barbell Rows",
+    instructions=("Perform 3 sets of 5 reps, going 1-2 reps before failure on the last set. "
+                  "Finish all 3 sets before moving on."),
+    exercises=[exercise.BarbellRows])
+
+BenchPress = ExerciseRoutine(
+    name="Bench Press",
+    instructions=("Perform 3 sets of 5 reps, going 1-2 reps before failure on the last set. "
+                  "Finish all 3 sets before moving on."),
+    exercises=[exercise.BarbellBenchPress])
+
+Squats = ExerciseRoutine(
+    name="Free Squats",
+    instructions=("Perform 3 sets of 5 reps, going 1-2 reps before failure on the last set. "
+                  "Finish all 3 sets before moving on."),
+    exercises=[exercise.FreeSquats])
+
+Pullups = ExerciseRoutine(
+    name="Pullups / Chinups",
+    instructions=("Perform 3 sets of 5 reps, going 1-2 reps before failure on the last set. "
+                  "Finish all 3 sets before moving on."),
+    exercises=[exercise.WeightedChinUps])
+
+OverheadPress = ExerciseRoutine(
+    name="Overhead Barbell Press",
+    instructions=("Perform 3 sets of 5 reps, going 1-2 reps before failure on the last set. "
+                  "Finish all 3 sets before moving on."),
+    exercises=[exercise.BarbellOverheadPress])
+
+Deadlifts = ExerciseRoutine(
+    name="Deadlifts",
+    instructions=("Perform 3 sets of 5 reps, going 1-2 reps before failure on the last set. "
+                  "Finish all 3 sets before moving on."),
+    exercises=[exercise.StraightBarDeadlifts])
+
+NoExcusesConditioningA = ExerciseRoutine(
+    name="No Excuses! (Conditioning)",
+    instructions=("Perform each exercise one after another with no breaks for "
+                  "4 sets. Exercise time for each set: 60, 45, 30, 15 for 10 "
+                  "minutes total (60x4 + 45x4 + 30x4 + 15x4)."),
+    exercises=[
+        exercise.Burpees,
+        exercise.Pullups,
+        exercise.BodyweightSquats,
+        exercise.PushUpVariations,
+    ],
+    include_all=True
+)
+
+NoExcusesConditioningB = ExerciseRoutine(
+    name="No Excuses! (Conditioning)",
+    instructions=("Perform each exercise one after another with no breaks for "
+                  "4 sets. Exercise time for each set: 60, 45, 30, 15 for 10 "
+                  "minutes total (60x4 + 45x4 + 30x4 + 15x4)."),
+    exercises=[
+        exercise.MountainClimbers,
+        exercise.JumpLunge,
+        exercise.Bicycle,
+        exercise.Burpees,
+    ],
+    include_all=True
+)
+
+AGTStretchRoutine = ExerciseRoutine(
+    name="Static Stretching!",
+    instructions="Follow the link for instructions.",
+    exercises=[exercise.AGTStretchRoutine]
+)
+
+YogaForFlexibilityA = ExerciseRoutine(
+    name="Yoga for Flexibility (A)",
+    instructions="Do this yoga!",
+    exercises=[exercise.YogaA]
+)
+
+YogaForFlexibilityB = ExerciseRoutine(
+    name="Yoga for Flexibility (B)",
+    instructions="Do this yoga!",
+    exercises=[exercise.YogaB]
+)
+
+AerobicTrainingA = ExerciseRoutine(
+    name="Aerobic Training",
+    instructions="20-60 minutes of training. Keep HR between 135-145 for Aerobic base training. Then do Trek Back A in Hevy.",
+    exercises=[
+        exercise.AerobicA,
+        exercise.BackA
+    ],
+    include_all=True
+)
+
+AerobicTrainingB = ExerciseRoutine(
+    name="Aerobic Training",
+    instructions="20-60 minutes of training. Keep HR between 135-145 for Aerobic base training. Then do Core A in Hevy.",
+    exercises=[
+        exercise.AerobicA,
+        exercise.CoreA
+    ],
+    include_all=True
+)
+
+Climb = ExerciseRoutine(
+    name="Climb",
+    instructions="Hit the wall baby!",
+    exercises=[exercise.Climb]
+)
+
+TrekStrength = ExerciseRoutine(
+    name="Trek Lower A in Hevy",
+    instructions="Hit it hard.",
+    exercises=[exercise.LowerA]
+)
+
+FiveThreeOneRoutine = ExerciseRoutine(
+    name="5/3/1",
+    instructions="Hit it hard.",
+    exercises=[exercise.FiveThreeOne]
+)
+
+DownDogYogaRoutine = ExerciseRoutine(
+    name="DownDog Yoga",
+    instructions="Get loose!",
+    exercise=[exercise.DownDogYoga]
+)
