@@ -413,5 +413,5 @@ FiveThreeOneRoutine = ExerciseRoutine(
 DownDogYogaRoutine = ExerciseRoutine(
     name="DownDog Yoga",
     instructions="Get loose!",
-    exercise=[exercise.DownDogYoga]
+    exercises=[exercise.DownDogYoga]
 )
