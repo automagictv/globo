@@ -49,5 +49,5 @@ FiveThreeOne = {
     THU: workout.FiveThreeOneWorkout,
     FRI: workout.Climb,
     SAT: workout.FiveThreeOneWorkout,
-    SUN: _activeRecoverySelector(),
+    SUN: workout.DownDogYoga,
 }
