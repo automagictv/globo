@@ -415,3 +415,15 @@ DownDogYogaRoutine = ExerciseRoutine(
     instructions="Get loose!",
     exercises=[exercise.DownDogYoga]
 )
+
+DumbbellStopgapA = ExerciseRoutine(
+    name="Dumbbell Stopgap A in Hevy",
+    instructions="You may be tired, but let's get it done!",
+    exercises=[exercise.DumbbellStopgapA]
+)
+
+DumbbellStopgapB = ExerciseRoutine(
+    name="Dumbbell Stopgap B in Hevy",
+    instructions="You may be tired, but let's get it done!",
+    exercises=[exercise.DumbbellStopgapB]
+)
