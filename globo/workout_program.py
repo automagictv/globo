@@ -51,3 +51,11 @@ FiveThreeOne = {
     SAT: workout.FiveThreeOneWorkout,
     SUN: workout.DownDogYoga,
 }
+
+# See https://old.reddit.com/r/Fitness/comments/zc0uy/a_beginner_dumbbell_program_the_dumbbell_stopgap/
+DumbbellStopGap = {
+    MON: workout.DumbbellStopgapA if WORKOUT_SWITCH else workout.DumbbellStopgapB,
+    WED: workout.DumbbellStopgapB if WORKOUT_SWITCH else workout.DumbbellStopgapA,
+    FRI: workout.DumbbellStopgapA if WORKOUT_SWITCH else workout.DumbbellStopgapB,
+    SUN: workout.DownDogYoga,
+}

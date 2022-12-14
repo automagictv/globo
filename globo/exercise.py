@@ -342,3 +342,5 @@ FiveThreeOne = Exercise(
     "5/3/1 in Hevy. Review example link for exact schedule.",
     "https://docs.google.com/spreadsheets/d/1h7Un7VR1_lgIhGCpaFQComvMB7GLRiRp/edit#gid=127263416")
 DownDogYoga = Exercise("DownDog Yoga in app", "nolink")
+DumbbellStopgapA = Exercise("Dumbbell stopgap A in Hevy", "https://www.hevy.com/routine/tZLxolj4ZbZ")
+DumbbellStopgapB = Exercise("Dumbbell stopgap B in Hevy", "https://www.hevy.com/routine/bVzdaHlN52Z")
