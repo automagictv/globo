@@ -20,6 +20,10 @@ class Exercise(object):
         """Formats the exercise as an html link."""
         return f"{self.name} (<a href=\"{self.url}\">example</a>)"
 
+    def as_markdown(self):
+        """Formats the exercise as a markdown link."""
+        return f"[{self.name}]({self.url})"
+
     def __str__(self):
         return self.as_html()
 
