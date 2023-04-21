@@ -57,6 +57,17 @@ class ExerciseRoutine(object):
                 </ul>
             </li>"""
 
+    def as_markdown(self):
+        """Formats the routine as a nested list of markdown links."""
+        exercises_formatted = ''.join([
+            f"  - {exercise.as_markdown()}\n"
+            for exercise in self.get_exercises()
+        ])
+        return f"""
+            - {self.name} {self.instructions.rstrip(".")}:
+            {exercises_formatted}
+            """
+
     def __str__(self):
         return self.as_html()
 
