@@ -29,7 +29,9 @@ if __name__ == "__main__":
             task_name = f"WORKOUT: {workout.name}"
             description = workout.as_markdown()
 
-            todoist.Todoist(os.environ.get("TODOIST_API_TOKEN")).addTask(task_name, description)
+            todoist.create(
+                os.environ.get("TODOIST_API_TOKEN")).addTask(
+                    task_name, description)
  
         else:
             subject = f"{datetime.datetime.today().date()} WORKOUT: {workout.name}"
