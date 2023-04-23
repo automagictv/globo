@@ -29,7 +29,7 @@ if __name__ == "__main__":
             task_name = f"WORKOUT: {workout.name}"
             description = workout.as_markdown()
 
-            todoist.create(
+            todoist.Todoist.create(
                 os.environ.get("TODOIST_API_TOKEN")).addTask(
                     task_name, description)
  
