@@ -15,7 +15,9 @@ class Todoist:
                 self._inbox_id = project.id
                 break
 
-        return self
-
     def addTask(self, name: str, description: str):
         return self._api.add_task(content=name, description=description)
+
+    @classmethod
+    def create(cls, api_token: str):
+        return Todoist(api_token)
