@@ -26,8 +26,8 @@ class Workout(object):
     def as_markdown(self):
         routines_formatted = ''.join([routine.as_markdown() for routine in self.routines])
         return f"""
-            **{self.name}**
-            {routines_formatted}
+        **{self.name}**
+          {routines_formatted}
             """
 
     def __str__(self):
